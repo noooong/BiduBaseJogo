@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class TriggerDamage : MonoBehaviour
 {
 
     public HeartSystem heart;
@@ -14,15 +14,5 @@ public class NewBehaviourScript : MonoBehaviour
         {
             heart.vida--;
         }
-    }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
     }
 }

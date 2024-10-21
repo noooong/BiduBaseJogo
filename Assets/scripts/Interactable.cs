@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Interactable : MonoBehaviour
 {
     [SerializeField] UnityEvent OnInteract;
     [SerializeField] GameObject UI;
-    // Start is called before the first frame update
+    [SerializeField]
+    
+
     void Start()
     {
         UI.SetActive(false);
@@ -19,6 +22,7 @@ public class Interactable : MonoBehaviour
         {
             UI.SetActive(true);
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -29,15 +33,31 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         
-        if (collision.GetComponent<BiduController>())
+
+        if (collision.gameObject.tag == "Player")
         {
-            if (Input.GetKeyDown(KeyCode.E)) { 
-                Debug.Log(collision.gameObject.name);
+           
+            if (Input.GetKey(KeyCode.E))
+            {
+                
                 OnInteract.Invoke();
+                
+                //SceneManager.LoadScene(nomeQuarto);
             }
         }
+
     }
+
+    
+
+    /*
+    private void EntrarNoQuarto()
+    {
+        SceneManager.LoadScene(nomeQuarto);
+    }
+    */
 }
+

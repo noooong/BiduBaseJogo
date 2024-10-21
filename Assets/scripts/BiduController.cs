@@ -11,16 +11,40 @@ public class BiduController : MonoBehaviour
     public bool _isWalk;
 
 
+
+
     // Start is called before the first frame update
     void Start()
     {
+       
+
         BiduRigidbody2D = GetComponent<Rigidbody2D>();
+        BiduRigidbody2D.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+        BiduRigidbody2D.sleepMode = RigidbodySleepMode2D.NeverSleep;
+
+        //quando carrega procura um objeto com a ultima porta que ele passou, caso encontre ele vai para a posição designada pela porta
+        try
+        {
+            if (PlayerPrefs.GetString("LastDoor") != "")
+            {
+                foreach (Door door in Door.PortasDaCena)
+                {
+                    if (door.Nome == PlayerPrefs.GetString("LastDoor"))
+                    {
+                        transform.position = door.SpawnArea.transform.position;
+                        break;
+                    }
+                }
+            }
+        }
+        catch { Debug.Log("não foi encontrado a porta com nome: " + PlayerPrefs.GetString("LastDoor")); }
     }
 
 
     // Update is called once per frame
     void Update()
     {
+
         PlayerMove();
 
         BiduRigidbody2D.MovePosition(BiduRigidbody2D.position + BiduDirection.normalized * BiduSpeed * Time.fixedDeltaTime);

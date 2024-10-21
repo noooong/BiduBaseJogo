@@ -1,23 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Porta : MonoBehaviour
+public class Door : Interactable
 {
-    // Start is called before the first frame update
-    void Start()
+    public static List<Door> PortasDaCena = new List<Door>();
+    public string Nome;
+
+    public GameObject Jogador;
+
+    public Transform SpawnArea;
+
+    private void Start()
     {
+        Jogador = FindObjectOfType<BiduController>().gameObject;
+
         
+
+        if (Nome == "")
+        {
+            Nome = gameObject.name;
+        }
+
+        PortasDaCena.Add(this);
+
+        for (int i = 0; i < PortasDaCena.Count; i++)
+        {
+            if (PortasDaCena[i].Nome == Nome && PortasDaCena[i] != this) { Nome = Nome + i; PortasDaCena[i].gameObject.name = Nome; }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    public void Debugar(string Teste)
+    public void CarregaCena(string CenaACarregar)
     {
-        Debug.Log(Teste);
+        PortasDaCena.Clear();
+        PlayerPrefs.SetString("LastDoor", Nome);
+       
+        SceneManager.LoadScene(CenaACarregar);
     }
 }
