@@ -148,7 +148,7 @@ MonoBehaviour:
   OnInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2729877372177326941}
+      - m_Target: {fileID: 11500000, guid: 2baaa029db311d044ab76f60adc879b2, type: 3}
         m_TargetAssemblyTypeName: Door, Assembly-CSharp
         m_MethodName: CarregaCena
         m_Mode: 5
@@ -157,7 +157,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Cordeiro
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   UI: {fileID: 5791984858120148531}
