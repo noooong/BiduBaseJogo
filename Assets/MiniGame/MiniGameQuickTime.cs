@@ -14,11 +14,18 @@ public class MiniGameQuickTime : MonoBehaviour
     [SerializeField] int jogoAtual;
     public UnityEvent OnWin;
     public UnityEvent OnLose;
+    [SerializeField] AudioClip WinSound, LoseSound;
+    AudioSource audioSource;
     
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
+        audioSource = GetComponent<AudioSource>();
+
+        tentativas = 3;
+        jogoAtual = 0;
+
        foreach (ItemJogo jogo in jogos)
         {
             jogo.Imagem.type = Image.Type.Filled;
@@ -52,15 +59,25 @@ public class MiniGameQuickTime : MonoBehaviour
             
                     if(tentativas <= 0)
                     {
+                        jogos[jogoAtual].Imagem.fillAmount = 1;
+                        gameObject.SetActive(false);
+                        audioSource.clip = LoseSound;
+                        audioSource.Play();
+                        Debug.Log("Perdeu MiniGame");
                         OnLose.Invoke();
                     }
                 }
 
             }
 
-            if(jogoAtual > jogos.Count)
+            if(jogoAtual >= jogos.Count)
             {
+                gameObject.SetActive(false);
+                audioSource.clip = WinSound;
+                audioSource.Play();
+                Debug.Log("Venceu MiniGame");
                 OnWin.Invoke();
+                
             }
         }
     }

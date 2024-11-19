@@ -27,13 +27,18 @@ public class InimigoComIA : InimigoBase
     public bool ChegouNoPonto = false;
 
     public AIDestinationSetter Destino;
+    AIPath aIPath;
     public GameObject Inimigo;
+
+    public GameObject CaixaDeEnergia;
 
     public float Timer;
 
     public float VelocidadePadrao, VelocidadePerseguicao;
 
-    AIPath aIPath;
+    
+
+    
    
 
     private void Awake()
@@ -101,7 +106,17 @@ public class InimigoComIA : InimigoBase
    public void FalhouPuzzle()
 
     {
-          
+        Destino.target = CaixaDeEnergia.transform;
+
+        if (Timer > 3)
+        {
+            Patrulha();
+            Destino.target = Pontos[PontoAtual];
+        }
+        else
+        {
+            Timer += Time.deltaTime;
+        }
     }
                 
    
