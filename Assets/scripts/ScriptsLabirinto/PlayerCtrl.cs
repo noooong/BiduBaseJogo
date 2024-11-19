@@ -2,51 +2,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerCtrl : MonoBehaviour
 {
 
-    private Camera mainCamera;
-    [SerializeField]
-    private float maxSpeed = 1f;
-    Rigidbody2D rb;
+    public float speed = 500;
+    public Rigidbody2D rb;
+    public Animator animator;
 
-    private void Start()
-    {
-        mainCamera = Camera.main;
-        rb = GetComponent<Rigidbody2D>();
-    }
+    Vector2 movimento;
 
     private void Update()
     {
-        FollowMousePositionDelayed(maxSpeed);
-    }
+        movimento = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        animator.SetFloat("Horizontal", movimento.x);
+        animator.SetFloat("Vertical", movimento.y);
+        animator.SetFloat("Velocidade", movimento.sqrMagnitude);
 
-    private void FollowMousePosition()
-    {
-        transform.position = GetWorldPositionFromMouse();
-    }
-
-
-    private void FollowMousePositionDelayed(float maxSpeed)
-    {
-        if(Input.GetMouseButton(0)) { 
-        //qual a direcao que o player vai seguir ao segurar o botão esquerdo do mouse
-        Vector2 direction = new Vector2(GetWorldPositionFromMouse().x -transform.position.x, GetWorldPositionFromMouse().y - transform.position.y );
-
-        //caso esteja apertando o mouse, o player vai se mover em direção a ele
-        rb.velocity = new Vector2(direction.x, direction.y ).normalized * maxSpeed * Vector2.Distance(transform.position, GetWorldPositionFromMouse());
-        }
-        else
+        if (movimento != Vector2.zero)
         {
-            //caso o contrario o player vai parar
-           
-            rb.velocity = Vector2.zero;
+            animator.SetFloat("Horizontal_idle", movimento.x);
+            animator.SetFloat("Vertical_idle", movimento.y);
         }
     }
 
-    private Vector2 GetWorldPositionFromMouse()
+    private void FixedUpdate()
     {
-        return mainCamera.ScreenToWorldPoint(Input.mousePosition);
-    }
+        
+    rb.velocity = movimento * speed * Time.deltaTime;
 
+    }
 }
+

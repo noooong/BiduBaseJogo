@@ -15,7 +15,7 @@ public class NPC_DT : MonoBehaviour
 
     public void TriggerEndDialogue()
     {
-        OnDialogueEnd.Invoke();
+        OnDialogueEnd.Invoke();     
     }
 
 

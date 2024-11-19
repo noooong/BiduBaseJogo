@@ -13237,7 +13237,7 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.329
+  m_FalloffIntensity: 0.422
   m_Color: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 1
@@ -13260,8 +13260,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 3.28
-  m_PointLightOuterRadius: 8.08
+  m_PointLightInnerRadius: 1.56
+  m_PointLightOuterRadius: 3.92
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -13308,8 +13308,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
-    newSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.19, y: 0.2}
+    newSize: {x: 0.19, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -13327,7 +13327,7 @@ Animator:
   m_GameObject: {fileID: 1504121132}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: aa553dab0e2c434488ae33390b25151f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 77292f8a3d1e5d74096b81b7480faff6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -13345,7 +13345,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1504121132}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b031e8c0ac78c04185455318fca742f, type: 3}
   m_Name: 
@@ -13397,7 +13397,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08901db349ebfd941be0124fcebd7901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 6.13
+  speed: 500
+  rb: {fileID: 1504121137}
+  animator: {fileID: 1504121135}
 --- !u!212 &1504121139
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13439,12 +13441,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 1469771103, guid: a9da0b1df44c4a34288d96fe4cbacd06, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a18ed1e6710545147925851f600503d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.19, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
