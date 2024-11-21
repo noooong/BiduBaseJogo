@@ -30,6 +30,7 @@ public class DialogueManager : MonoBehaviour
         {
             Destroy(instance );
         }
+        Debug.Log(gameObject.name);
         instance = this;
     }
 

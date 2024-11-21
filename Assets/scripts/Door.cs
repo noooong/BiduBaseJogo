@@ -15,8 +15,9 @@ public class Door : Interactable
     private void Start()
     {
         Jogador = FindObjectOfType<BiduController>().gameObject;
+        Jogador = FindObjectOfType<PlayerCtrl>().gameObject;
 
-        
+
 
         if (Nome == "")
         {
