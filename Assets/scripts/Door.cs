@@ -18,7 +18,6 @@ public class Door : Interactable
         Jogador = FindObjectOfType<PlayerCtrl>().gameObject;
 
 
-
         if (Nome == "")
         {
             Nome = gameObject.name;

@@ -7,6 +7,7 @@ public class Load : MonoBehaviour
 {
     public GameObject Jogador;
 
+
     private void Start()
     {
         Jogador = FindObjectOfType<BiduController>().gameObject;

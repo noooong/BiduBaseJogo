@@ -61,7 +61,12 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(List<Dialogue> dialogues, NPC_DT DT)
     {
-       
+        nameText.text = "";
+        dialogueText.text = "";
+        TalkingPicture.sprite = null;
+        SpriteQueue.Clear();
+        nomeQueue.Clear();
+        sentences.Clear();
         CaixaDeDialogo.SetActive(true);
         sentences.Clear();
         foreach(Dialogue dialogue in dialogues) { 
@@ -76,6 +81,8 @@ public class DialogueManager : MonoBehaviour
                 
             }
         }
+       // TalkingPicture.gameObject.SetActive(SpriteQueue.Count != 0); 
+        
         StartCoroutine(DisplayNextSentence(DT));
         
     }
