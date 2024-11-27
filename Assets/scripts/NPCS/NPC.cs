@@ -8,6 +8,7 @@ public class NPC : MonoBehaviour
     public AIDestinationSetter Destino;
     AIPath aIPath;
     public GameObject Saida;
+  
 
     private void Awake()
     {
@@ -31,6 +32,7 @@ public class NPC : MonoBehaviour
     {
         Destino.target = Saida.transform;
         aIPath.endReachedDistance = 0;
+
 
         
 
