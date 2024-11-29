@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/ScenesMenu/Main Manu.unity
+    guid: 1e1038829973c8442855840b06b0186d
+  - enabled: 1
     path: Assets/Scenes/ScenesRoom/BiduRoom.unity
     guid: f4bded9b08aac7d4aa38e267b566bb2f
   - enabled: 1
@@ -29,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniGameCordeiro.unity
     guid: c2fb824d0764db2428155e18aacdae5f
+  - enabled: 1
+    path: Assets/ScenesMenu/Credits.unity
+    guid: 9ccbfd04c0740c649a08fed5870c6a64
+  - enabled: 1
+    path: Assets/ScenesMenu/Scene 1.unity
+    guid: a650410e57b55ad40a7205654ca6e752
   m_configObjects: {}

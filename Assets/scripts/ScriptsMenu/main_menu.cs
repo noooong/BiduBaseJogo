@@ -16,8 +16,10 @@ public class main_menu : MonoBehaviour
     {
         Application.Quit();
     }
-    public void Marcos()
+    public void Credits()
     {
-        SceneManager.LoadSceneAsync("Marcos");
+        SceneManager.LoadSceneAsync("Credits");
     }
+
+
 }
