@@ -6,6 +6,7 @@ using TMPro;
 using  System.Threading.Tasks;
 using Unity.VisualScripting;
 using System;
+using System.Linq;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -96,9 +97,9 @@ public class DialogueManager : MonoBehaviour
             EndDialogue(DT);
             yield return null; 
         }
-
-
-        string sentence = sentences.Dequeue();
+        string sentence = "";
+        if (sentences.Count > 0) { sentence = sentences.Dequeue(); }
+        
         dialogueText.text = sentence;
         
 
@@ -117,7 +118,7 @@ public class DialogueManager : MonoBehaviour
 
         while (GoToNextDialogue == false) 
         {
-            Debug.Log("Cosorro");
+            
            yield return null;
         }
         GoToNextDialogue = false;

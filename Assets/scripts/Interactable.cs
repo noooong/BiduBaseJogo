@@ -14,6 +14,7 @@ public class Interactable : MonoBehaviour
 
     void Start()
     {
+        InTrigger = false;
         UI.SetActive(false);
     }
 

@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public EstadoCordeiro estadoCordeiro = EstadoCordeiro.Neutro;
     public static GameManager Instance;
+    
 
     private void Awake()
     {
