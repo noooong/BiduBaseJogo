@@ -9,7 +9,7 @@ public class Teste : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-        PlayerPrefs.SetString("LastDoor", "");
+        //PlayerPrefs.SetString("LastDoor", "");
     }
 
     // Update is called once per frame

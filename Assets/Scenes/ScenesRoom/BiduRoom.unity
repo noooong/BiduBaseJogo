@@ -6648,13 +6648,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - name: Tigo
+  - name: Bidu
     Foto: {fileID: 21300000, guid: fbbe09015638eb64dbc60ca38ae88162, type: 3}
     setences:
-    - '*Pensamento*
-
-      Hm, acho que preciso ligar a luz, mas tenho que pegar
-      a chave do quadro de luz que fica na casa do cordeiro.'
+    - "*Pensamentos*\nQue estranho, o Tigo me ligou e do nada a liga\xE7\xE3o deu
+      interfer\xEAncia"
+    - "Ele parecia assustado, mas a luz s\xF3 caiu."
+    - "Enfim, dram\xE1tico como sempre..."
   OnDialogueEnd:
     m_PersistentCalls:
       m_Calls: []

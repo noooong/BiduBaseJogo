@@ -1,36 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class FloorTransfer : MonoBehaviour
+public class FloorTransfer : Door
 {
-
-    [SerializeField]
-    private string nomeProximaFase;
-
-
+    public string CenaACarregar;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        
-        if (collision.GetComponent<BiduController>() || collision.GetComponent<PlayerCtrl>())
-
-        {
-            IrProximaFase();
+        if (collision.GetComponent<BiduController>()) 
+        { 
+            CarregaCena(CenaACarregar);
         }
     }
 
-    public IEnumerator Wait()
+    protected override void OnTriggerExit2D(Collider2D collision)
     {
-        new WaitForSeconds(0.5f);
-        IrProximaFase();
-        yield return true;
-    }
-
-    private void IrProximaFase()
-    {
-        SceneManager.LoadScene(this.nomeProximaFase);
+        
     }
 
 }
