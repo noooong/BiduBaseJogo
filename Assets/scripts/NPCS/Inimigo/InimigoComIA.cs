@@ -138,7 +138,7 @@ public class InimigoComIA : InimigoBase
             if (transform.position.x > Destino.target.position.x)
             {
                 Vector3 theScale = transform.localScale;
-                theScale.x = -1;
+                theScale.x = Mathf.Abs(transform.localScale.x) * -1;
                 transform.localScale = theScale;
                 Debug.Log("a direita");
             }
@@ -146,7 +146,7 @@ public class InimigoComIA : InimigoBase
             else
             {
                 Vector3 theScale = transform.localScale;
-                theScale.x = 1;
+                theScale.x = Mathf.Abs( transform.localScale.x) * 1;
                 transform.localScale = theScale;
                 Debug.Log("a esquerda");
             }

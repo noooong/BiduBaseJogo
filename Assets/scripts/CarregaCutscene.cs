@@ -15,10 +15,7 @@ public class CarregaCutscene : MonoBehaviour
     {
         Ramificacao = false;
         UI.SetActive(false);
-
-      
     }
-
 
     public void CutsceneSim()
     {
